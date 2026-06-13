@@ -1,0 +1,17 @@
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\ObjectMapperConfig.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\OpenApiConfig.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\WebConfig.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\PersonController.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\TestLogController.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\data\dto\PersonDTO.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\ExceptionResponse.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\handler\CustomEntityResponseHandler.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\RequiredObjectIsNullException.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\exception\ResourceNotFoundException.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\mapper\ObjectMapper.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\model\Person.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\PersonRepository.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serialization\converter\YamlJackson2HttpMessageConverter.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serializer\GenderSerializer.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\PersonServices.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\Startup.java
