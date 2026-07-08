@@ -1,7 +1,7 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.PersonDTO;
-import br.com.erudio.services.PersonServices;
+import br.com.erudio.unittests.services.PersonServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
