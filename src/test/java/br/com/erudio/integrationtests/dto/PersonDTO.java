@@ -1,10 +1,9 @@
-package br.com.erudio.data.dto;
+package br.com.erudio.integrationtests.dto;
 
 // import com.fasterxml.jackson.annotation.JsonIgnore;
 // import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import br.com.erudio.serializer.GenderSerializer;
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

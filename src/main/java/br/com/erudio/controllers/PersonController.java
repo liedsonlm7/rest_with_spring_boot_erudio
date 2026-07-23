@@ -1,7 +1,7 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.PersonDTO;
-import br.com.erudio.unittests.services.PersonServices;
+import br.com.erudio.services.PersonServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -146,6 +146,30 @@ public class PersonController {
         return service.update(person);
     }
 
+    @PatchMapping(value = "/{id}",
+            produces = {
+                    MediaType.APPLICATION_JSON_VALUE,
+                    MediaType.APPLICATION_XML_VALUE,
+                    MediaType.APPLICATION_YAML_VALUE
+            })
+    @Operation(summary = "Disables a Person",
+            description = "Disables a specific person by their ID",
+            tags = {"People"},
+            responses = {
+                    @ApiResponse(
+                            description = "Success",
+                            responseCode = "200",
+                            content = @Content(schema = @Schema(implementation = PersonDTO.class))
+                    ),
+                    @ApiResponse(description = "Bad Request", responseCode = "400", content = @Content),
+                    @ApiResponse(description = "Unauthorized", responseCode = "401", content = @Content),
+                    @ApiResponse(description = "Not Found", responseCode = "404", content = @Content),
+                    @ApiResponse(description = "Internal Server Error", responseCode = "500", content = @Content)
+            }
+    )
+    public PersonDTO disablePerson(@PathVariable("id") Long id) {
+        return service.disablePerson(id);
+    }
 
     @DeleteMapping(value = "/{id}")
     @Operation(summary = "Deletes a Person",

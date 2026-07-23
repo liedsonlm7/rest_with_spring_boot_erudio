@@ -1,7 +1,7 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.BookDTO;
-import br.com.erudio.unittests.services.BookServices;
+import br.com.erudio.services.BookServices;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
