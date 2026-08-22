@@ -5,6 +5,7 @@ package br.com.erudio.integrationtests.dto;
 
 import br.com.erudio.serializer.GenderSerializer;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.xml.bind.annotation.XmlRootElement;
@@ -17,6 +18,7 @@ import java.util.Objects;
 // @JsonPropertyOrder({"id", "firstName", "lastName", "address", "gender"})
 // @JsonFilter("PersonFilter")
 @XmlRootElement
+@JsonIgnoreProperties(value = "links", allowGetters = true)
 public class PersonDTO extends RepresentationModel<PersonDTO> implements Serializable {
 
     private static final long serialVersionUID = 1L;

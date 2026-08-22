@@ -1,6 +1,7 @@
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\config\TestConfigs.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\controllers\cors\withjson\PersonControllerCorsTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\controllers\withjson\PersonControllerJsonTest.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\controllers\withXML\PersonControllerXmlTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\dto\PersonDTO.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\swagger\SwaggerIntegrationTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\testcontainers\AbstractIntegrationTest.java
