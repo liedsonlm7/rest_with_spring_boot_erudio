@@ -17,6 +17,6 @@ X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\sr
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\PersonRepository.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serialization\converter\YamlJackson2HttpMessageConverter.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serializer\GenderSerializer.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\BookServices.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\PersonServices.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\Startup.java
-X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\unittests\services\BookServices.java
-X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\unittests\services\PersonServices.java
