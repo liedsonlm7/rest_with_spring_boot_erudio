@@ -2,6 +2,7 @@ package br.com.erudio.integrationtests.controllers.withjson;
 
 import br.com.erudio.config.TestConfigs;
 import br.com.erudio.integrationtests.dto.PersonDTO;
+import br.com.erudio.integrationtests.dto.wrapper.WrapperPersonDTO;
 import br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -187,7 +188,8 @@ class PersonControllerJsonTest extends AbstractIntegrationTest {
                 .body()
                 .asString();
 
-        List<PersonDTO> people = objectMapper.readValue(content, new TypeReference<List<PersonDTO>>() {});
+        WrapperPersonDTO wrapper = objectMapper.readValue(content, WrapperPersonDTO.class);
+        List<PersonDTO> people = wrapper.getEmbedded().getPeople();
 
         PersonDTO personOne = people.get(0);
         person = personOne;
