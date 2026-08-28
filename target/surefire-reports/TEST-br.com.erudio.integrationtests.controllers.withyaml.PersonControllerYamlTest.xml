@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.587" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.355" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -72,9 +72,9 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[rest-with-spring-boot-and-java-erudio] "/>
   </properties>
-  <testcase name="createTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.307">
-    <system-out><![CDATA[2026-08-27T21:34:15.172-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest]: AbstractIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-08-27T21:34:15.214-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.erudio.Startup for test class br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest
+  <testcase name="createTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.068">
+    <system-out><![CDATA[2026-08-27T21:34:15.761-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest]: AbstractIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-08-27T21:34:15.800-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.erudio.Startup for test class br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest
 Request method:	POST
 Request URI:	http://localhost:8888/api/person/v1
 Proxy:			<none>
@@ -83,74 +83,67 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Origin=https://www.erudio.com.br
-				Accept=application/xml
-				Content-Type=application/xml; charset=ISO-8859-1
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
 Body:
-<personDTO>
-  <address>Helsinki - Finland</address>
-  <enabled>true</enabled>
-  <firstName>Linus</firstName>
-  <gender>Male</gender>
-  <lastName>Torvalds</lastName>
-</personDTO>
-2026-08-27T21:34:15.480-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-2] br.com.erudio.services.PersonServices    : Creating one Person!
+---
+id: null
+firstName: "Linus"
+lastName: "Torvalds"
+birthDay: null
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: true
+sensitiveData: null
+links: []
+
+2026-08-27T21:34:15.835-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [io-8888-exec-10] br.com.erudio.services.PersonServices    : Creating one Person!
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Content-Type: application/xml
+Content-Type: application/yaml
 Transfer-Encoding: chunked
 Date: Fri, 28 Aug 2026 00:34:15 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
-<PersonDTO>
-  <id>1014</id>
-  <firstName>Linus</firstName>
-  <lastName>Torvalds</lastName>
-  <birthDay/>
-  <address>Helsinki - Finland</address>
-  <gender>Male</gender>
-  <enabled>true</enabled>
-  <sensitiveData/>
-  <links>
-    <rel>self</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>findAll</rel>
-    <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>create</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>POST</type>
-  </links>
-  <links>
-    <rel>update</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>PUT</type>
-  </links>
-  <links>
-    <rel>disable</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>PATCH</type>
-  </links>
-  <links>
-    <rel>delete</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>DELETE</type>
-  </links>
-</PersonDTO>
+---
+id: 1015
+firstName: "Linus"
+lastName: "Torvalds"
+birthDay: null
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: true
+sensitiveData: null
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/person/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/person/v1"
+  type: "PUT"
+- rel: "disable"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "PATCH"
+- rel: "delete"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="updateTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.053">
+  <testcase name="updateTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.04">
     <system-out><![CDATA[Request method:	PUT
 Request URI:	http://localhost:8888/api/person/v1
 Proxy:			<none>
@@ -159,239 +152,209 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Origin=https://www.erudio.com.br
-				Accept=application/xml
-				Content-Type=application/xml; charset=ISO-8859-1
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
 Body:
-<personDTO>
-  <address>Helsinki - Finland</address>
-  <enabled>true</enabled>
-  <firstName>Linus</firstName>
-  <gender>Male</gender>
-  <id>1014</id>
-  <lastName>Benedict Torvalds</lastName>
-</personDTO>
-2026-08-27T21:34:15.545-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-5] br.com.erudio.services.PersonServices    : Updating one Person!
+---
+id: 1015
+firstName: "Linus"
+lastName: "Benedict Torvalds"
+birthDay: null
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: true
+sensitiveData: null
+links: []
+
+2026-08-27T21:34:15.883-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-1] br.com.erudio.services.PersonServices    : Updating one Person!
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Content-Type: application/xml
+Content-Type: application/yaml
 Transfer-Encoding: chunked
 Date: Fri, 28 Aug 2026 00:34:15 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
-<PersonDTO>
-  <id>1014</id>
-  <firstName>Linus</firstName>
-  <lastName>Benedict Torvalds</lastName>
-  <birthDay/>
-  <address>Helsinki - Finland</address>
-  <gender>Male</gender>
-  <enabled>true</enabled>
-  <sensitiveData/>
-  <links>
-    <rel>self</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>findAll</rel>
-    <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>create</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>POST</type>
-  </links>
-  <links>
-    <rel>update</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>PUT</type>
-  </links>
-  <links>
-    <rel>disable</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>PATCH</type>
-  </links>
-  <links>
-    <rel>delete</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>DELETE</type>
-  </links>
-</PersonDTO>
+---
+id: 1015
+firstName: "Linus"
+lastName: "Benedict Torvalds"
+birthDay: null
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: true
+sensitiveData: null
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/person/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/person/v1"
+  type: "PUT"
+- rel: "disable"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "PATCH"
+- rel: "delete"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="findByIdTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.029">
+  <testcase name="findByIdTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.026">
     <system-out><![CDATA[Request method:	GET
-Request URI:	http://localhost:8888/api/person/v1/1014
+Request URI:	http://localhost:8888/api/person/v1/1015
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	id=1014
+Path params:	id=1015
 Headers:		Origin=https://www.erudio.com.br
-				Accept=application/xml
-				Content-Type=application/xml; charset=ISO-8859-1
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-2026-08-27T21:34:15.592-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-8] br.com.erudio.services.PersonServices    : Finding one Person!
+2026-08-27T21:34:15.923-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-3] br.com.erudio.services.PersonServices    : Finding one Person!
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Content-Type: application/xml
+Content-Type: application/yaml
 Transfer-Encoding: chunked
 Date: Fri, 28 Aug 2026 00:34:15 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
-<PersonDTO>
-  <id>1014</id>
-  <firstName>Linus</firstName>
-  <lastName>Benedict Torvalds</lastName>
-  <phoneNumber>123456789</phoneNumber>
-  <birthDay>28/08/2026</birthDay>
-  <address>Helsinki - Finland</address>
-  <gender>Male</gender>
-  <enabled>true</enabled>
-  <sensitiveData>Foo Bar</sensitiveData>
-  <links>
-    <rel>self</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>findAll</rel>
-    <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>create</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>POST</type>
-  </links>
-  <links>
-    <rel>update</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>PUT</type>
-  </links>
-  <links>
-    <rel>disable</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>PATCH</type>
-  </links>
-  <links>
-    <rel>delete</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>DELETE</type>
-  </links>
-</PersonDTO>
+---
+id: 1015
+firstName: "Linus"
+lastName: "Benedict Torvalds"
+phoneNumber: "123456789"
+birthDay: "28/08/2026"
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: true
+sensitiveData: "Foo Bar"
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/person/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/person/v1"
+  type: "PUT"
+- rel: "disable"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "PATCH"
+- rel: "delete"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="disableTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.039">
+  <testcase name="disableTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.045">
     <system-out><![CDATA[Request method:	PATCH
-Request URI:	http://localhost:8888/api/person/v1/1014
+Request URI:	http://localhost:8888/api/person/v1/1015
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	id=1014
+Path params:	id=1015
 Headers:		Origin=https://www.erudio.com.br
-				Accept=application/xml
-				Content-Type=application/xml; charset=ISO-8859-1
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-2026-08-27T21:34:15.624-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-9] br.com.erudio.services.PersonServices    : Disabling one Person!
+2026-08-27T21:34:15.955-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-4] br.com.erudio.services.PersonServices    : Disabling one Person!
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Content-Type: application/xml
+Content-Type: application/yaml
 Transfer-Encoding: chunked
 Date: Fri, 28 Aug 2026 00:34:15 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
-<PersonDTO>
-  <id>1014</id>
-  <firstName>Linus</firstName>
-  <lastName>Benedict Torvalds</lastName>
-  <birthDay/>
-  <address>Helsinki - Finland</address>
-  <gender>Male</gender>
-  <enabled>false</enabled>
-  <sensitiveData/>
-  <links>
-    <rel>self</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>findAll</rel>
-    <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-    <type>GET</type>
-  </links>
-  <links>
-    <rel>create</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>POST</type>
-  </links>
-  <links>
-    <rel>update</rel>
-    <href>http://localhost:8888/api/person/v1</href>
-    <type>PUT</type>
-  </links>
-  <links>
-    <rel>disable</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>PATCH</type>
-  </links>
-  <links>
-    <rel>delete</rel>
-    <href>http://localhost:8888/api/person/v1/1014</href>
-    <type>DELETE</type>
-  </links>
-</PersonDTO>
+---
+id: 1015
+firstName: "Linus"
+lastName: "Benedict Torvalds"
+birthDay: null
+address: "Helsinki - Finland"
+gender: "Male"
+enabled: false
+sensitiveData: null
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/person/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/person/v1"
+  type: "PUT"
+- rel: "disable"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "PATCH"
+- rel: "delete"
+  href: "http://localhost:8888/api/person/v1/1015"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="deleteTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.042">
+  <testcase name="deleteTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.043">
     <system-out><![CDATA[Request method:	DELETE
-Request URI:	http://localhost:8888/api/person/v1/1014
+Request URI:	http://localhost:8888/api/person/v1/1015
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
-Path params:	id=1014
+Path params:	id=1015
 Headers:		Origin=https://www.erudio.com.br
 				Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-2026-08-27T21:34:15.663-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-7] br.com.erudio.services.PersonServices    : Deleting one Person!
+2026-08-27T21:34:15.998-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-2] br.com.erudio.services.PersonServices    : Deleting one Person!
 HTTP/1.1 204 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Date: Fri, 28 Aug 2026 00:34:15 GMT
+Date: Fri, 28 Aug 2026 00:34:16 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 ]]></system-out>
   </testcase>
-  <testcase name="findAllTest" classname="br.com.erudio.integrationtests.controllers.withXML.PersonControllerXmlTest" time="0.064">
+  <testcase name="findAllTest" classname="br.com.erudio.integrationtests.controllers.withyaml.PersonControllerYamlTest" time="0.083">
     <system-out><![CDATA[Request method:	GET
 Request URI:	http://localhost:8888/api/person/v1?page=3&size=12&direction=asc
 Proxy:			<none>
@@ -402,533 +365,378 @@ Query params:	page=3
 Form params:	<none>
 Path params:	<none>
 Headers:		Origin=https://www.erudio.com.br
-				Accept=application/xml
+				Accept=application/yaml
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-2026-08-27T21:34:15.703-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-6] br.com.erudio.services.PersonServices    : Finding all People!
+2026-08-27T21:34:16.044-03:00  INFO 5220 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-5] br.com.erudio.services.PersonServices    : Finding all People!
 HTTP/1.1 200 
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Access-Control-Allow-Origin: https://www.erudio.com.br
 Access-Control-Allow-Credentials: true
-Content-Type: application/xml
+Content-Type: application/yaml
 Transfer-Encoding: chunked
-Date: Fri, 28 Aug 2026 00:34:15 GMT
+Date: Fri, 28 Aug 2026 00:34:16 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
-<PagedModel>
-  <links>
-    <rel>first</rel>
-    <href>http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&amp;page=0&amp;size=12&amp;sort=firstName,asc</href>
-  </links>
-  <links>
-    <rel>prev</rel>
-    <href>http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&amp;page=2&amp;size=12&amp;sort=firstName,asc</href>
-  </links>
-  <links>
-    <rel>self</rel>
-    <href>http://localhost:8888/api/person/v1?page=3&amp;size=12&amp;direction=firstName%3A%20ASC</href>
-  </links>
-  <links>
-    <rel>next</rel>
-    <href>http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&amp;page=4&amp;size=12&amp;sort=firstName,asc</href>
-  </links>
-  <links>
-    <rel>last</rel>
-    <href>http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&amp;page=84&amp;size=12&amp;sort=firstName,asc</href>
-  </links>
-  <content>
-    <content>
-      <id>799</id>
-      <firstName>Allin</firstName>
-      <lastName>Emmot</lastName>
-      <birthDay/>
-      <address>7913 Lindbergh Way</address>
-      <gender>Male</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/799</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/799</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/799</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>201</id>
-      <firstName>Allin</firstName>
-      <lastName>Otridge</lastName>
-      <birthDay/>
-      <address>09846 Independence Center</address>
-      <gender>Male</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/201</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/201</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/201</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>688</id>
-      <firstName>Allyn</firstName>
-      <lastName>Josh</lastName>
-      <birthDay/>
-      <address>119 Declaration Lane</address>
-      <gender>Female</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/688</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/688</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/688</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>689</id>
-      <firstName>Almeria</firstName>
-      <lastName>Curm</lastName>
-      <birthDay/>
-      <address>34 Burrows Point</address>
-      <gender>Female</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/689</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/689</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/689</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>211</id>
-      <firstName>Alonso</firstName>
-      <lastName>Luchelli</lastName>
-      <birthDay/>
-      <address>9 Doe Crossing Avenue</address>
-      <gender>Male</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/211</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/211</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/211</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>342</id>
-      <firstName>Alphonso</firstName>
-      <lastName>Eddisforth</lastName>
-      <birthDay/>
-      <address>485 Dayton Avenue</address>
-      <gender>Male</gender>
-      <enabled>true</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/342</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/342</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/342</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>245</id>
-      <firstName>Alvera</firstName>
-      <lastName>MacMillan</lastName>
-      <birthDay/>
-      <address>59929 Loeprich Place</address>
-      <gender>Female</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/245</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/245</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/245</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>44</id>
-      <firstName>Alwin</firstName>
-      <lastName>Flockhart</lastName>
-      <birthDay/>
-      <address>81 Forest Run Alley</address>
-      <gender>Male</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/44</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/44</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/44</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>326</id>
-      <firstName>Amargo</firstName>
-      <lastName>Stalf</lastName>
-      <birthDay/>
-      <address>9 Golf View Trail</address>
-      <gender>Female</gender>
-      <enabled>true</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/326</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/326</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/326</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>841</id>
-      <firstName>Amberly</firstName>
-      <lastName>Faherty</lastName>
-      <birthDay/>
-      <address>5906 Harbort Way</address>
-      <gender>Female</gender>
-      <enabled>false</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/841</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/841</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/841</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>947</id>
-      <firstName>Ambros</firstName>
-      <lastName>Garrit</lastName>
-      <birthDay/>
-      <address>27 School Pass</address>
-      <gender>Male</gender>
-      <enabled>true</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/947</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/947</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/947</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-    <content>
-      <id>571</id>
-      <firstName>Ambrosio</firstName>
-      <lastName>Walkowski</lastName>
-      <birthDay/>
-      <address>2613 Monument Junction</address>
-      <gender>Male</gender>
-      <enabled>true</enabled>
-      <sensitiveData/>
-      <links>
-        <rel>self</rel>
-        <href>http://localhost:8888/api/person/v1/571</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>findAll</rel>
-        <href>http://localhost:8888/api/person/v1?page=1&amp;size=12&amp;direction=asc</href>
-        <type>GET</type>
-      </links>
-      <links>
-        <rel>create</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>POST</type>
-      </links>
-      <links>
-        <rel>update</rel>
-        <href>http://localhost:8888/api/person/v1</href>
-        <type>PUT</type>
-      </links>
-      <links>
-        <rel>disable</rel>
-        <href>http://localhost:8888/api/person/v1/571</href>
-        <type>PATCH</type>
-      </links>
-      <links>
-        <rel>delete</rel>
-        <href>http://localhost:8888/api/person/v1/571</href>
-        <type>DELETE</type>
-      </links>
-    </content>
-  </content>
-  <page>
-    <size>12</size>
-    <totalElements>1009</totalElements>
-    <totalPages>85</totalPages>
-    <number>3</number>
-  </page>
-</PagedModel>
+---
+links:
+- rel: "first"
+  href: "http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&page=0&size=12&sort=firstName,asc"
+- rel: "prev"
+  href: "http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&page=2&size=12&sort=firstName,asc"
+- rel: "self"
+  href: "http://localhost:8888/api/person/v1?page=3&size=12&direction=firstName%3A%20ASC"
+- rel: "next"
+  href: "http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&page=4&size=12&sort=firstName,asc"
+- rel: "last"
+  href: "http://localhost:8888/api/person/v1?direction=firstName%3A%20ASC&page=84&size=12&sort=firstName,asc"
+content:
+- id: 799
+  firstName: "Allin"
+  lastName: "Emmot"
+  birthDay: null
+  address: "7913 Lindbergh Way"
+  gender: "Male"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/799"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/799"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/799"
+    type: "DELETE"
+  links: []
+- id: 201
+  firstName: "Allin"
+  lastName: "Otridge"
+  birthDay: null
+  address: "09846 Independence Center"
+  gender: "Male"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/201"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/201"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/201"
+    type: "DELETE"
+  links: []
+- id: 688
+  firstName: "Allyn"
+  lastName: "Josh"
+  birthDay: null
+  address: "119 Declaration Lane"
+  gender: "Female"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/688"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/688"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/688"
+    type: "DELETE"
+  links: []
+- id: 689
+  firstName: "Almeria"
+  lastName: "Curm"
+  birthDay: null
+  address: "34 Burrows Point"
+  gender: "Female"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/689"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/689"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/689"
+    type: "DELETE"
+  links: []
+- id: 211
+  firstName: "Alonso"
+  lastName: "Luchelli"
+  birthDay: null
+  address: "9 Doe Crossing Avenue"
+  gender: "Male"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/211"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/211"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/211"
+    type: "DELETE"
+  links: []
+- id: 342
+  firstName: "Alphonso"
+  lastName: "Eddisforth"
+  birthDay: null
+  address: "485 Dayton Avenue"
+  gender: "Male"
+  enabled: true
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/342"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/342"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/342"
+    type: "DELETE"
+  links: []
+- id: 245
+  firstName: "Alvera"
+  lastName: "MacMillan"
+  birthDay: null
+  address: "59929 Loeprich Place"
+  gender: "Female"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/245"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/245"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/245"
+    type: "DELETE"
+  links: []
+- id: 44
+  firstName: "Alwin"
+  lastName: "Flockhart"
+  birthDay: null
+  address: "81 Forest Run Alley"
+  gender: "Male"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/44"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/44"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/44"
+    type: "DELETE"
+  links: []
+- id: 326
+  firstName: "Amargo"
+  lastName: "Stalf"
+  birthDay: null
+  address: "9 Golf View Trail"
+  gender: "Female"
+  enabled: true
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/326"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/326"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/326"
+    type: "DELETE"
+  links: []
+- id: 841
+  firstName: "Amberly"
+  lastName: "Faherty"
+  birthDay: null
+  address: "5906 Harbort Way"
+  gender: "Female"
+  enabled: false
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/841"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/841"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/841"
+    type: "DELETE"
+  links: []
+- id: 947
+  firstName: "Ambros"
+  lastName: "Garrit"
+  birthDay: null
+  address: "27 School Pass"
+  gender: "Male"
+  enabled: true
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/947"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/947"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/947"
+    type: "DELETE"
+  links: []
+- id: 571
+  firstName: "Ambrosio"
+  lastName: "Walkowski"
+  birthDay: null
+  address: "2613 Monument Junction"
+  gender: "Male"
+  enabled: true
+  sensitiveData: null
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/person/v1/571"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/person/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/person/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/person/v1"
+    type: "PUT"
+  - rel: "disable"
+    href: "http://localhost:8888/api/person/v1/571"
+    type: "PATCH"
+  - rel: "delete"
+    href: "http://localhost:8888/api/person/v1/571"
+    type: "DELETE"
+  links: []
+page:
+  size: 12
+  totalElements: 1009
+  totalPages: 85
+  number: 3
+
 ]]></system-out>
   </testcase>
 </testsuite>

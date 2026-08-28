@@ -1,4 +1,4 @@
-package br.com.erudio.integrationtests.dto.wrapper;
+package br.com.erudio.integrationtests.dto.wrapper.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,7 +8,7 @@ public class WrapperPersonDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty()
+    @JsonProperty("_embedded")
     private PersonEmbeddedDTO embedded;
 
     public WrapperPersonDTO() {}
