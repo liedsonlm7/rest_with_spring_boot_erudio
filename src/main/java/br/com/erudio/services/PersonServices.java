@@ -210,8 +210,9 @@ public class PersonServices {
         dto.add(linkTo(methodOn(PersonController.class).delete(dto.getId())).withRel("delete").withType("DELETE"));
 
         dto.add(linkTo(methodOn(PersonController.class).exportPage(
-                1, 12, "asc", MediaTypes.APPLICATION_XLSX_VALUE).withRel("exportPage")
+                1, 12, "asc", null)).withRel("exportPage")
                 .withType("GET")
-        ));
+                .withTitle("Export people")
+        );
     }
 }
