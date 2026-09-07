@@ -7,11 +7,9 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
@@ -37,6 +35,7 @@ public class EmailController {
         return new ResponseEntity<>("e-mail sent with success!", HttpStatus.OK);
     }
 
+    @PostMapping(value = "/withAttachment", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "Send an e-Mail with Attachment",
             description = "Sends an e-mail with Attachment by providing details, subject and body!",
             tags = {"e-Mail"},
@@ -47,7 +46,10 @@ public class EmailController {
                     @ApiResponse(description = "Internal Server Error", responseCode = "500", content = @Content)
             }
     )
-    public ResponseEntity<String> sendMailWithAttachment(String emailRequestJson, MultipartFile multipartFile) {
-        return null;
+    public ResponseEntity<String> sendMailWithAttachment(
+            @RequestParam("emailRequest") String emailRequest,
+            @RequestParam("attachment") MultipartFile attachment) {
+        emailService.sendEmailWithAttachment(emailRequest, attachment);
+        return new ResponseEntity<>("e-mail with attachment sent successfully!", HttpStatus.OK);
     }
 }
