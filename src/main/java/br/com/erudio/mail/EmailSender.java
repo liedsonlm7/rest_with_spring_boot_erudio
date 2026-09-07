@@ -48,7 +48,7 @@ public class EmailSender implements Serializable {
         return this;
     }
 
-    public EmailSender attachment(String fileDir) {
+    public EmailSender attach(String fileDir) {
         this.attachment = new File(fileDir);
         return this;
     }
