@@ -17,6 +17,7 @@ X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\sr
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\dto\wrapper\xmlandyaml\PagedModelPerson.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\swagger\SwaggerIntegrationTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\integrationtests\testcontainers\AbstractIntegrationTest.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\repository\PersonRepositoryTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\services\BookServicesTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\services\PersonServicesTest.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\test\java\br\com\erudio\unittests\mapper\mocks\MockBook.java
