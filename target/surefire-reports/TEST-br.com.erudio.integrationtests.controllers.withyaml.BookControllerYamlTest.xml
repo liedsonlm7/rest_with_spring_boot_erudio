@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.services.PersonServicesTest" time="0.191" tests="7" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.307" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -52,7 +52,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\liedson\AppData\Local\Temp\"/>
     <property name="catalina.home" value="C:\Users\liedson\AppData\Local\Temp\tomcat.8888.503956193881858447"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.9"/>
     <property name="user.dir" value="X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio"/>
     <property name="os.arch" value="amd64"/>
@@ -71,25 +71,513 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[rest-with-spring-boot-and-java-erudio] "/>
   </properties>
-  <testcase name="create" classname="br.com.erudio.services.PersonServicesTest" time="0.151">
-    <system-out><![CDATA[2026-09-07T16:31:32.967-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Creating one Person!
+  <testcase name="createTest" classname="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.08">
+    <system-out><![CDATA[2026-09-07T16:31:30.909-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest]: AbstractIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-07T16:31:30.953-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.erudio.Startup for test class br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest
+Request method:	POST
+Request URI:	http://localhost:8888/api/book/v1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Origin=https://www.erudio.com.br
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+---
+id: null
+author: "Nigel Poulton"
+launchDate: 1788809490956
+price: 55.99
+title: "Docker Deep Dive"
+
+2026-09-07T16:31:31.001-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-7] br.com.erudio.services.BookServices      : Creating one Book!
+HTTP/1.1 200 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: https://www.erudio.com.br
+Access-Control-Allow-Credentials: true
+Content-Type: application/yaml
+Transfer-Encoding: chunked
+Date: Mon, 07 Sep 2026 19:31:31 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+---
+id: 18
+author: "Nigel Poulton"
+launchDate: 1788809490956
+price: 55.99
+title: "Docker Deep Dive"
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/book/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/book/v1"
+  type: "PUT"
+- rel: "delete"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="delete" classname="br.com.erudio.services.PersonServicesTest" time="0.006">
-    <system-out><![CDATA[2026-09-07T16:31:32.979-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Deleting one Person!
+  <testcase name="updateTest" classname="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.043">
+    <system-out><![CDATA[Request method:	PUT
+Request URI:	http://localhost:8888/api/book/v1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Origin=https://www.erudio.com.br
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+---
+id: 18
+author: "Nigel Poulton"
+launchDate: 1788809490956
+price: 55.99
+title: "Docker Deep Dive - Updated"
+
+2026-09-07T16:31:31.045-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-2] br.com.erudio.services.BookServices      : Updating one Book!
+HTTP/1.1 200 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: https://www.erudio.com.br
+Access-Control-Allow-Credentials: true
+Content-Type: application/yaml
+Transfer-Encoding: chunked
+Date: Mon, 07 Sep 2026 19:31:31 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+---
+id: 18
+author: "Nigel Poulton"
+launchDate: 1788809490956
+price: 55.99
+title: "Docker Deep Dive - Updated"
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/book/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/book/v1"
+  type: "PUT"
+- rel: "delete"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="findAll" classname="br.com.erudio.services.PersonServicesTest" time="0.0">
-    <skipped message="REASON: Still Under Development"/>
-  </testcase>
-  <testcase name="update" classname="br.com.erudio.services.PersonServicesTest" time="0.011">
-    <system-out><![CDATA[2026-09-07T16:31:32.986-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Updating one Person!
+  <testcase name="findByIdTest" classname="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.024">
+    <system-out><![CDATA[Request method:	GET
+Request URI:	http://localhost:8888/api/book/v1/18
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	id=18
+Headers:		Origin=https://www.erudio.com.br
+				Accept=application/yaml
+				Content-Type=application/yaml; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2026-09-07T16:31:31.088-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-8] br.com.erudio.services.BookServices      : Finding one Book!
+HTTP/1.1 200 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: https://www.erudio.com.br
+Access-Control-Allow-Credentials: true
+Content-Type: application/yaml
+Transfer-Encoding: chunked
+Date: Mon, 07 Sep 2026 19:31:31 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+---
+id: 18
+author: "Nigel Poulton"
+launchDate: 1788750000000
+price: 55.99
+title: "Docker Deep Dive - Updated"
+links:
+- rel: "self"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "GET"
+- rel: "findAll"
+  href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+  type: "GET"
+- rel: "create"
+  href: "http://localhost:8888/api/book/v1"
+  type: "POST"
+- rel: "update"
+  href: "http://localhost:8888/api/book/v1"
+  type: "PUT"
+- rel: "delete"
+  href: "http://localhost:8888/api/book/v1/18"
+  type: "DELETE"
+
 ]]></system-out>
   </testcase>
-  <testcase name="findById" classname="br.com.erudio.services.PersonServicesTest" time="0.01">
-    <system-out><![CDATA[2026-09-07T16:31:32.997-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Finding one Person!
+  <testcase name="deleteTest" classname="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.041">
+    <system-out><![CDATA[Request method:	DELETE
+Request URI:	http://localhost:8888/api/book/v1/18
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	id=18
+Headers:		Origin=https://www.erudio.com.br
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2026-09-07T16:31:31.113-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-4] br.com.erudio.services.BookServices      : Deleting one Book!
+HTTP/1.1 204 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: https://www.erudio.com.br
+Access-Control-Allow-Credentials: true
+Date: Mon, 07 Sep 2026 19:31:31 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
 ]]></system-out>
   </testcase>
-  <testcase name="testUpdateWithNullPerson" classname="br.com.erudio.services.PersonServicesTest" time="0.004"/>
-  <testcase name="testCreateWithNullPerson" classname="br.com.erudio.services.PersonServicesTest" time="0.004"/>
+  <testcase name="findAllTest" classname="br.com.erudio.integrationtests.controllers.withyaml.BookControllerYamlTest" time="0.069">
+    <system-out><![CDATA[Request method:	GET
+Request URI:	http://localhost:8888/api/book/v1?page=0&size=12&direction=asc
+Proxy:			<none>
+Request params:	<none>
+Query params:	page=0
+				size=12
+				direction=asc
+Form params:	<none>
+Path params:	<none>
+Headers:		Origin=https://www.erudio.com.br
+				Accept=application/yaml
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2026-09-07T16:31:31.155-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [nio-8888-exec-3] br.com.erudio.services.BookServices      : Finding all Books!
+HTTP/1.1 200 
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: https://www.erudio.com.br
+Access-Control-Allow-Credentials: true
+Content-Type: application/yaml
+Transfer-Encoding: chunked
+Date: Mon, 07 Sep 2026 19:31:31 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+---
+links:
+- rel: "first"
+  href: "http://localhost:8888/api/book/v1?direction=title%3A%20ASC&page=0&size=12&sort=title,asc"
+- rel: "self"
+  href: "http://localhost:8888/api/book/v1?page=0&size=12&direction=title%3A%20ASC"
+- rel: "next"
+  href: "http://localhost:8888/api/book/v1?direction=title%3A%20ASC&page=1&size=12&sort=title,asc"
+- rel: "last"
+  href: "http://localhost:8888/api/book/v1?direction=title%3A%20ASC&page=1&size=12&sort=title,asc"
+content:
+- id: 12
+  author: "Viktor Mayer-Schonberger e Kenneth Kukier"
+  launchDate: 1510020000000
+  price: 54.0
+  title: "Big Data: como extrair volume, variedade, velocidade e valor da avalanche\
+    \ de informação cotidiana"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/12"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/12"
+    type: "DELETE"
+  links: []
+- id: 3
+  author: "Robert C. Martin"
+  launchDate: 1231552800000
+  price: 77.0
+  title: "Clean Code"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/3"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/3"
+    type: "DELETE"
+  links: []
+- id: 5
+  author: "Steve McConnell"
+  launchDate: 1510020000000
+  price: 58.0
+  title: "Code complete"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/5"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/5"
+    type: "DELETE"
+  links: []
+- id: 2
+  author: "Ralph Johnson, Erich Gamma, John Vlissides e Richard Helm"
+  launchDate: 1511920800000
+  price: 45.0
+  title: "Design Patterns"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/2"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/2"
+    type: "DELETE"
+  links: []
+- id: 8
+  author: "Eric Evans"
+  launchDate: 1510020000000
+  price: 92.0
+  title: "Domain Driven Design"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/8"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/8"
+    type: "DELETE"
+  links: []
+- id: 11
+  author: "Roger S. Pressman"
+  launchDate: 1510020000000
+  price: 56.0
+  title: "Engenharia de Software: uma abordagem profissional"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/11"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/11"
+    type: "DELETE"
+  links: []
+- id: 7
+  author: "Eric Freeman, Elisabeth Freeman, Kathy Sierra, Bert Bates"
+  launchDate: 1510020000000
+  price: 110.0
+  title: "Head First Design Patterns"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/7"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/7"
+    type: "DELETE"
+  links: []
+- id: 15
+  author: "Aguinaldo Aragon Fernandes e Vladimir Ferraz de Abreu"
+  launchDate: 1510020000000
+  price: 54.0
+  title: "Implantando a governança de TI"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/15"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/15"
+    type: "DELETE"
+  links: []
+- id: 9
+  author: "Brian Goetz e Tim Peierls"
+  launchDate: 1510020000000
+  price: 80.0
+  title: "Java Concurrency in Practice"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/9"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/9"
+    type: "DELETE"
+  links: []
+- id: 4
+  author: "Crockford"
+  launchDate: 1510020000000
+  price: 67.0
+  title: "JavaScript"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/4"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/4"
+    type: "DELETE"
+  links: []
+- id: 10
+  author: "Susan Cain"
+  launchDate: 1510020000000
+  price: 123.0
+  title: "O poder dos quietos"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/10"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/10"
+    type: "DELETE"
+  links: []
+- id: 13
+  author: "Richard Hunter e George Westerman"
+  launchDate: 1510020000000
+  price: 95.0
+  title: "O verdadeiro valor de TI"
+  links:
+  - rel: "self"
+    href: "http://localhost:8888/api/book/v1/13"
+    type: "GET"
+  - rel: "findAll"
+    href: "http://localhost:8888/api/book/v1?page=1&size=12&direction=asc"
+    type: "GET"
+  - rel: "create"
+    href: "http://localhost:8888/api/book/v1"
+    type: "POST"
+  - rel: "update"
+    href: "http://localhost:8888/api/book/v1"
+    type: "PUT"
+  - rel: "delete"
+    href: "http://localhost:8888/api/book/v1/13"
+    type: "DELETE"
+  links: []
+page:
+  size: 12
+  totalElements: 15
+  totalPages: 2
+  number: 0
+
+]]></system-out>
+  </testcase>
 </testsuite>

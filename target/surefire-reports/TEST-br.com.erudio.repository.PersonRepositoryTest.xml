@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.services.PersonServicesTest" time="0.191" tests="7" errors="0" skipped="1" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="br.com.erudio.repository.PersonRepositoryTest" time="0.629" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -71,25 +71,52 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[rest-with-spring-boot-and-java-erudio] "/>
   </properties>
-  <testcase name="create" classname="br.com.erudio.services.PersonServicesTest" time="0.151">
-    <system-out><![CDATA[2026-09-07T16:31:32.967-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Creating one Person!
+  <testcase name="findPeopleByName" classname="br.com.erudio.repository.PersonRepositoryTest" time="0.02">
+    <system-out><![CDATA[2026-09-07T16:31:31.602-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest]: AbstractIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-09-07T16:31:31.653-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.erudio.Startup for test class br.com.erudio.repository.PersonRepositoryTest
+2026-09-07T16:31:31.657-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2026-09-07T16:31:31.683-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] b.c.e.repository.PersonRepositoryTest    : Starting PersonRepositoryTest using Java 21.0.9 with PID 17924 (started by liedson in X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio)
+2026-09-07T16:31:31.684-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] b.c.e.repository.PersonRepositoryTest    : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T16:31:31.834-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T16:31:31.895-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2026-09-07T16:31:31.942-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-09-07T16:31:31.961-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@553c4d0d
+2026-09-07T16:31:31.961-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-09-07T16:31:31.969-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:60171/test (MySQL 9.1)
+2026-09-07T16:31:31.980-03:00  WARN 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 9.1 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2026-09-07T16:31:31.999-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 6 migrations (execution time 00:00.016s)
+2026-09-07T16:31:32.016-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `test`: 6
+2026-09-07T16:31:32.018-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.f.core.internal.command.DbMigrate      : Schema `test` is up to date. No migration necessary.
+2026-09-07T16:31:32.061-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T16:31:32.063-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T16:31:32.073-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T16:31:32.077-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 9.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T16:31:32.131-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T16:31:32.131-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T16:31:32.185-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] b.c.e.repository.PersonRepositoryTest    : Started PersonRepositoryTest in 0.527 seconds (process running for 36.72)
+Hibernate: select p1_0.id,p1_0.address,p1_0.enabled,p1_0.first_name,p1_0.gender,p1_0.last_name from person p1_0 where p1_0.first_name like lower(concat('%',?,'%')) escape '' order by p1_0.first_name limit ?
 ]]></system-out>
   </testcase>
-  <testcase name="delete" classname="br.com.erudio.services.PersonServicesTest" time="0.006">
-    <system-out><![CDATA[2026-09-07T16:31:32.979-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Deleting one Person!
+  <testcase name="disablePerson" classname="br.com.erudio.repository.PersonRepositoryTest" time="0.019">
+    <system-out><![CDATA[Hibernate: update person p1_0 set enabled=0 where p1_0.id=?
+Hibernate: select p1_0.id,p1_0.address,p1_0.enabled,p1_0.first_name,p1_0.gender,p1_0.last_name from person p1_0 where p1_0.id=?
 ]]></system-out>
   </testcase>
-  <testcase name="findAll" classname="br.com.erudio.services.PersonServicesTest" time="0.0">
-    <skipped message="REASON: Still Under Development"/>
-  </testcase>
-  <testcase name="update" classname="br.com.erudio.services.PersonServicesTest" time="0.011">
-    <system-out><![CDATA[2026-09-07T16:31:32.986-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Updating one Person!
-]]></system-out>
-  </testcase>
-  <testcase name="findById" classname="br.com.erudio.services.PersonServicesTest" time="0.01">
-    <system-out><![CDATA[2026-09-07T16:31:32.997-03:00  INFO 17924 --- [rest-with-spring-boot-and-java-erudio] [           main] br.com.erudio.services.PersonServices    : Finding one Person!
-]]></system-out>
-  </testcase>
-  <testcase name="testUpdateWithNullPerson" classname="br.com.erudio.services.PersonServicesTest" time="0.004"/>
-  <testcase name="testCreateWithNullPerson" classname="br.com.erudio.services.PersonServicesTest" time="0.004"/>
 </testsuite>

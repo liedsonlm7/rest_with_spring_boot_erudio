@@ -1,4 +1,4 @@
-package br.com.erudio.integrationtests.controllers.withXML;
+package br.com.erudio.integrationtests.controllers.withxml;
 
 import br.com.erudio.config.TestConfigs;
 import br.com.erudio.integrationtests.dto.PersonDTO;
