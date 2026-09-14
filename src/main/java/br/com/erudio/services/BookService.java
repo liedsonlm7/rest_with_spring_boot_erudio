@@ -1,9 +1,7 @@
 package br.com.erudio.services;
 
 import br.com.erudio.controllers.BookController;
-import br.com.erudio.controllers.PersonController;
 import br.com.erudio.data.dto.BookDTO;
-import br.com.erudio.data.dto.PersonDTO;
 import br.com.erudio.exception.RequiredObjectIsNullException;
 import br.com.erudio.exception.ResourceNotFoundException;
 import br.com.erudio.model.Book;
@@ -19,17 +17,14 @@ import org.springframework.hateoas.PagedModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-import static br.com.erudio.mapper.ObjectMapper.parseListObjects;
 import static br.com.erudio.mapper.ObjectMapper.parseObject;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Service
-public class BookServices {
+public class BookService {
 
-    private Logger logger = LoggerFactory.getLogger(BookServices.class.getName());
+    private Logger logger = LoggerFactory.getLogger(BookService.class.getName());
 
     @Autowired
     BookRepository repository;

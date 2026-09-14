@@ -29,7 +29,7 @@ class BookServicesTest {
     MockBook input;
 
     @InjectMocks
-    private BookServices services;
+    private BookService services;
 
     @Mock
     BookRepository repository;

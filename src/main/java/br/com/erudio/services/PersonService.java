@@ -8,7 +8,6 @@ import br.com.erudio.exception.RequiredObjectIsNullException;
 import br.com.erudio.exception.ResourceNotFoundException;
 import static br.com.erudio.mapper.ObjectMapper.parseObject;
 
-import br.com.erudio.file.exporter.MediaTypes;
 import br.com.erudio.file.exporter.contract.FileExporter;
 import br.com.erudio.file.exporter.factory.FileExporterFactory;
 import br.com.erudio.file.importer.contract.FileImporter;
@@ -38,9 +37,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PersonServices {
+public class PersonService {
 
-    private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
+    private Logger logger = LoggerFactory.getLogger(PersonService.class.getName());
 
     @Autowired
     PersonRepository repository;

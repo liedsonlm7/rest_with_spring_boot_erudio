@@ -2,7 +2,7 @@ package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.PersonDTO;
 import br.com.erudio.file.exporter.MediaTypes;
-import br.com.erudio.services.PersonServices;
+import br.com.erudio.services.PersonService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -12,7 +12,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -34,7 +33,7 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    private PersonServices service;
+    private PersonService service;
     // private PersonServices service = new PersonServices();
 
     @GetMapping(produces = {

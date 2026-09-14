@@ -1,7 +1,7 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.BookDTO;
-import br.com.erudio.services.BookServices;
+import br.com.erudio.services.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -18,15 +18,13 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/book/v1")
 @Tag(name = "Books", description = "Endpoints for Managing Books")
 public class BookController {
 
     @Autowired
-    private BookServices service;
+    private BookService service;
 
     @GetMapping(produces = {
             MediaType.APPLICATION_JSON_VALUE,

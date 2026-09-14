@@ -30,7 +30,7 @@ class PersonServicesTest {
     MockPerson input;
 
     @InjectMocks
-    private PersonServices services;
+    private PersonService services;
 
     @Mock
     PersonRepository repository;
