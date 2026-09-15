@@ -18,7 +18,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -91,11 +90,10 @@ public class JwtTokenProvider {
     public String resolveToken(HttpServletRequest request) {
         String bearerToken = request.getHeader("Authorization");
 
-        if(StringUtils.isEmpty(bearerToken) && bearerToken.startsWith("Bearer ")) {
+        if(StringUtils.isNotBlank(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring("Bearer ".length());
-        } else {
-            throw new InvalidJWTAuthenticationException("Invalid JWT Token");
         }
+        return null;
     }
 
     public boolean validateToken(String token) {
