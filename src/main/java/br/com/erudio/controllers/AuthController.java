@@ -2,7 +2,6 @@ package br.com.erudio.controllers;
 
 import br.com.erudio.data.dto.PersonDTO;
 import br.com.erudio.data.dto.security.AccountCredentialsDTO;
-import br.com.erudio.data.dto.security.TokenDTO;
 import br.com.erudio.services.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -48,7 +47,7 @@ public class AuthController {
         var token = service.refreshToken(username, refreshToken);
 
         if (token == null) {
-            ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid client request!");
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Invalid client request!");
         }
         return ResponseEntity.ok(token).getBody();
     }
