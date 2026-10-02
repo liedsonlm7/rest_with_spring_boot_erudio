@@ -10,7 +10,6 @@ br\com\erudio\exception\RequiredObjectIsNullException.class
 br\com\erudio\exception\handler\CustomEntityResponseHandler.class
 br\com\erudio\model\Person.class
 br\com\erudio\exception\FileNotFoundException.class
-br\com\erudio\services\BookServices.class
 br\com\erudio\file\exporter\contract\FileExporter.class
 br\com\erudio\file\exporter\impl\XlsxExporter.class
 br\com\erudio\config\WebConfig.class
@@ -20,7 +19,6 @@ br\com\erudio\data\dto\BookDTO.class
 br\com\erudio\model\Book.class
 br\com\erudio\config\EmailConfig.class
 br\com\erudio\data\dto\PersonDTO.class
-br\com\erudio\services\PersonServices.class
 br\com\erudio\mapper\ObjectMapper.class
 br\com\erudio\controllers\FileController.class
 br\com\erudio\config\OpenApiConfig.class

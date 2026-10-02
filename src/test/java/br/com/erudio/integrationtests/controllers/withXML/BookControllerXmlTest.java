@@ -1,7 +1,9 @@
-package br.com.erudio.integrationtests.controllers.withxml;
+package br.com.erudio.integrationtests.controllers.withXML;
 
 import br.com.erudio.config.TestConfigs;
+import br.com.erudio.integrationtests.dto.AccountCredentialsDTO;
 import br.com.erudio.integrationtests.dto.BookDTO;
+import br.com.erudio.integrationtests.dto.TokenDTO;
 import br.com.erudio.integrationtests.dto.wrappers.xmlandyaml.PagedModelBook;
 import br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,6 +32,7 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
     private static XmlMapper objectMapper;
 
     private static BookDTO book;
+    private static TokenDTO tokenDto;
 
     @BeforeAll
     static void setUp() {
@@ -37,33 +40,63 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
         book = new BookDTO();
+        tokenDto = new TokenDTO();
     }
+
+    @Test
+    @Order(0)
+    void signin() throws JsonProcessingException {
+        AccountCredentialsDTO credentials =
+                new AccountCredentialsDTO("leandro", "admin123");
+
+        var content = given()
+                .basePath("/auth/signin")
+                .port(TestConfigs.SERVER_PORT)
+                .contentType(MediaType.APPLICATION_XML_VALUE)
+                .accept(MediaType.APPLICATION_XML_VALUE)
+                .body(credentials)
+                .when()
+                .post()
+                .then()
+                .statusCode(200)
+                .extract()
+                .body()
+                .asString();
+
+        tokenDto = objectMapper.readValue(content, TokenDTO.class);
+
+        specification = new RequestSpecBuilder()
+                .addHeader(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_ERUDIO)
+                .addHeader(TestConfigs.HEADER_PARAM_AUTHORIZATION, "Bearer " + tokenDto.getAccessToken())
+                .setBasePath("/api/book/v1")
+                .setPort(TestConfigs.SERVER_PORT)
+                .addFilter(new RequestLoggingFilter(LogDetail.ALL))
+                .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
+                .build();
+
+
+        assertNotNull(tokenDto.getAccessToken());
+        assertNotNull(tokenDto.getRefreshToken());
+    }
+
 
     @Test
     @Order(1)
     void createTest() throws JsonProcessingException {
         mockBook();
 
-        specification = new RequestSpecBuilder()
-            .addHeader(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_ERUDIO)
-            .setBasePath("/api/book/v1")
-            .setPort(TestConfigs.SERVER_PORT)
-                .addFilter(new RequestLoggingFilter(LogDetail.ALL))
-                .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
-            .build();
-
         var content = given(specification)
-            .contentType(MediaType.APPLICATION_XML_VALUE)
-            .accept(MediaType.APPLICATION_XML_VALUE)
+                .contentType(MediaType.APPLICATION_XML_VALUE)
+                .accept(MediaType.APPLICATION_XML_VALUE)
                 .body(book)
-            .when()
+                .when()
                 .post()
-            .then()
+                .then()
                 .statusCode(200)
                 .contentType(MediaType.APPLICATION_XML_VALUE)
-            .extract()
+                .extract()
                 .body()
-                    .asString();
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -74,7 +107,7 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
         assertEquals("Nigel Poulton", book.getAuthor());
         assertEquals(55.99, book.getPrice());
     }
-    
+
     @Test
     @Order(2)
     void updateTest() throws JsonProcessingException {
@@ -82,17 +115,17 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
         book.setTitle("Docker Deep Dive - Updated");
 
         var content = given(specification)
-            .contentType(MediaType.APPLICATION_XML_VALUE)
-            .accept(MediaType.APPLICATION_XML_VALUE)
+                .contentType(MediaType.APPLICATION_XML_VALUE)
+                .accept(MediaType.APPLICATION_XML_VALUE)
                 .body(book)
-            .when()
+                .when()
                 .put()
-            .then()
+                .then()
                 .statusCode(200)
                 .contentType(MediaType.APPLICATION_XML_VALUE)
-            .extract()
+                .extract()
                 .body()
-                    .asString();
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -111,15 +144,15 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
         var content = given(specification)
                 .contentType(MediaType.APPLICATION_XML_VALUE)
                 .accept(MediaType.APPLICATION_XML_VALUE)
-                    .pathParam("id", book.getId())
+                .pathParam("id", book.getId())
                 .when()
-                    .get("{id}")
+                .get("{id}")
                 .then()
-                    .statusCode(200)
-                    .contentType(MediaType.APPLICATION_XML_VALUE)
+                .statusCode(200)
+                .contentType(MediaType.APPLICATION_XML_VALUE)
                 .extract()
-                    .body()
-                        .asString();
+                .body()
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -140,9 +173,9 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
 
         given(specification)
                 .pathParam("id", book.getId())
-            .when()
+                .when()
                 .delete("{id}")
-            .then()
+                .then()
                 .statusCode(204);
     }
 
@@ -153,7 +186,7 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
 
         var content = given(specification)
                 .accept(MediaType.APPLICATION_XML_VALUE)
-                .queryParams("page", 0 , "size", 12, "direction", "asc")
+                .queryParams("page", 9 , "size", 12, "direction", "asc")
                 .when()
                 .get()
                 .then()
@@ -173,20 +206,20 @@ class BookControllerXmlTest extends AbstractIntegrationTest {
         assertNotNull(bookOne.getAuthor());
         assertNotNull(bookOne.getPrice());
         assertTrue(bookOne.getId() > 0);
-        assertEquals("Big Data: como extrair volume, variedade, velocidade e valor da avalanche de informação cotidiana", bookOne.getTitle());
-        assertEquals("Viktor Mayer-Schonberger e Kenneth Kukier", bookOne.getAuthor());
-        assertEquals(54.00, bookOne.getPrice());
+        assertEquals("The Art of Agile Development", bookOne.getTitle());
+        assertEquals("James Shore e Shane Warden", bookOne.getAuthor());
+        assertEquals(97.21, bookOne.getPrice());
 
-        BookDTO foundBookFive = books.get(4);
+        BookDTO foundBookSeven = books.get(7);
 
-        assertNotNull(foundBookFive.getId());
-        assertNotNull(foundBookFive.getTitle());
-        assertNotNull(foundBookFive.getAuthor());
-        assertNotNull(foundBookFive.getPrice());
-        assertTrue(foundBookFive.getId() > 0);
-        assertEquals("Domain Driven Design", foundBookFive.getTitle());
-        assertEquals("Eric Evans", foundBookFive.getAuthor());
-        assertEquals(92.00, foundBookFive.getPrice());
+        assertNotNull(foundBookSeven.getId());
+        assertNotNull(foundBookSeven.getTitle());
+        assertNotNull(foundBookSeven.getAuthor());
+        assertNotNull(foundBookSeven.getPrice());
+        assertTrue(foundBookSeven.getId() > 0);
+        assertEquals("The Art of Computer Programming, Volume 1: Fundamental Algorithms", foundBookSeven.getTitle());
+        assertEquals("Donald E. Knuth", foundBookSeven.getAuthor());
+        assertEquals(139.69, foundBookSeven.getPrice());
     }
 
     private void mockBook() {

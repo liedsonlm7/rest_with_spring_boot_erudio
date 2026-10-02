@@ -1,7 +1,9 @@
 package br.com.erudio.integrationtests.controllers.withjson;
 
 import br.com.erudio.config.TestConfigs;
+import br.com.erudio.integrationtests.dto.AccountCredentialsDTO;
 import br.com.erudio.integrationtests.dto.BookDTO;
+import br.com.erudio.integrationtests.dto.TokenDTO;
 import br.com.erudio.integrationtests.dto.wrappers.json.WrapperBookDTO;
 import br.com.erudio.integrationtests.testcontainers.AbstractIntegrationTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,6 +22,7 @@ import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
@@ -30,6 +33,7 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
     private static ObjectMapper objectMapper;
 
     private static BookDTO book;
+    private static TokenDTO tokenDto;
 
     @BeforeAll
     static void setUp() {
@@ -37,6 +41,40 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
         objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
         book = new BookDTO();
+        tokenDto = new TokenDTO();
+    }
+
+    @Test
+    @Order(0)
+    void signin() {
+        AccountCredentialsDTO credentials =
+                new AccountCredentialsDTO("leandro", "admin123");
+
+        tokenDto = given()
+                .basePath("/auth/signin")
+                .port(TestConfigs.SERVER_PORT)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(credentials)
+                .when()
+                .post()
+                .then()
+                .statusCode(200)
+                .extract()
+                .body()
+                .as(TokenDTO.class);
+
+
+        specification = new RequestSpecBuilder()
+                .addHeader(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_ERUDIO)
+                .addHeader(TestConfigs.HEADER_PARAM_AUTHORIZATION, "Bearer " + tokenDto.getAccessToken())
+                .setBasePath("/api/book/v1")
+                .setPort(TestConfigs.SERVER_PORT)
+                .addFilter(new RequestLoggingFilter(LogDetail.ALL))
+                .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
+                .build();
+
+        assertNotNull(tokenDto.getAccessToken());
+        assertNotNull(tokenDto.getRefreshToken());
     }
 
     @Test
@@ -44,25 +82,17 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
     void createTest() throws JsonProcessingException {
         mockBook();
 
-        specification = new RequestSpecBuilder()
-            .addHeader(TestConfigs.HEADER_PARAM_ORIGIN, TestConfigs.ORIGIN_ERUDIO)
-            .setBasePath("/api/book/v1")
-            .setPort(TestConfigs.SERVER_PORT)
-                .addFilter(new RequestLoggingFilter(LogDetail.ALL))
-                .addFilter(new ResponseLoggingFilter(LogDetail.ALL))
-            .build();
-
         var content = given(specification)
-            .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(book)
-            .when()
+                .when()
                 .post()
-            .then()
+                .then()
                 .statusCode(200)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .extract()
+                .extract()
                 .body()
-                    .asString();
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -73,7 +103,7 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
         assertEquals("Nigel Poulton", book.getAuthor());
         assertEquals(55.99, book.getPrice());
     }
-    
+
     @Test
     @Order(2)
     void updateTest() throws JsonProcessingException {
@@ -81,16 +111,16 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
         book.setTitle("Docker Deep Dive - Updated");
 
         var content = given(specification)
-            .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(book)
-            .when()
+                .when()
                 .put()
-            .then()
+                .then()
                 .statusCode(200)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-            .extract()
+                .extract()
                 .body()
-                    .asString();
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -110,16 +140,16 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
     void findByIdTest() throws JsonProcessingException {
 
         var content = given(specification)
-                    .contentType(MediaType.APPLICATION_JSON_VALUE)
-                    .pathParam("id", book.getId())
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .pathParam("id", book.getId())
                 .when()
-                    .get("{id}")
+                .get("{id}")
                 .then()
-                    .statusCode(200)
-                    .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .statusCode(200)
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .extract()
-                    .body()
-                        .asString();
+                .body()
+                .asString();
 
         BookDTO createdBook = objectMapper.readValue(content, BookDTO.class);
         book = createdBook;
@@ -140,9 +170,9 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
 
         given(specification)
                 .pathParam("id", book.getId())
-            .when()
+                .when()
                 .delete("{id}")
-            .then()
+                .then()
                 .statusCode(204);
     }
 
@@ -153,7 +183,7 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
 
         var content = given(specification)
                 .accept(MediaType.APPLICATION_JSON_VALUE)
-                .queryParams("page", 0 , "size", 12, "direction", "asc")
+                .queryParams("page", 0, "size", 12, "direction", "asc")
                 .when()
                 .get()
                 .then()
@@ -163,9 +193,11 @@ class BookControllerJsonTest extends AbstractIntegrationTest {
                 .body()
                 .asString();
 
-        // List<BookDTO> books = objectMapper.readValue(content, new TypeReference<List<BookDTO>>() {});
         WrapperBookDTO wrapper = objectMapper.readValue(content, WrapperBookDTO.class);
+        assertNotNull("A primeira página deve conter _embedded", wrapper.getEmbedded());
         var books = wrapper.getEmbedded().getBooks();
+        assertNotNull("A resposta deve conter a lista de livros", books);
+        assertEquals(12, books.size());
 
         BookDTO bookOne = books.get(0);
 

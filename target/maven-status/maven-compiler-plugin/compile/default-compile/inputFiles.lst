@@ -2,7 +2,9 @@ X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\sr
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\FileStorageConfig.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\ObjectMapperConfig.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\OpenApiConfig.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\SecurityConfig.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\config\WebConfig.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\AuthController.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\BookController.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\EmailController.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\controllers\FileController.java
@@ -40,11 +42,14 @@ X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\sr
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\BookRepository.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\PersonRepository.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\repository\UserRepository.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\security\jwt\JwtTokenFilter.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\security\jwt\JwtTokenProvider.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serialization\converter\YamlJackson2HttpMessageConverter.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\serializer\GenderSerializer.java
-X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\BookServices.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\AuthService.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\BookService.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\EmailService.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\FileStorageService.java
-X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\PersonServices.java
+X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\PersonService.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\services\UserService.java
 X:\Programacao\Desenvolvimento Back-end\rest-with-spring-boot-and-java-erudio\src\main\java\br\com\erudio\Startup.java
