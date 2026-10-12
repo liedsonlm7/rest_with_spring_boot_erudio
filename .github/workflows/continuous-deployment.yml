@@ -30,6 +30,10 @@ jobs:
 
     - name: Build Application .jar
       working-directory: ./
+      env:
+        JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+        EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
       run: mvn clean package
 
     - name: Docker Compose Build
